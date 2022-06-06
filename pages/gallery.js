@@ -14,16 +14,32 @@ import WrapperContainer from "../components/WrapperContainer";
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    src: "./gall1.JPG",
   },
   {
-    src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    src: "./gall2.JPG",
   },
   {
-    src: "https://images.unsplash.com/photo-1654361812787-c94d96427dea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+    src: "./gall3.JPG",
+  },
+
+  {
+    src: "./gall4.JPG",
   },
   {
-    src: "https://images.unsplash.com/photo-1654361812787-c94d96427dea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+    src: "./gall9.JPG",
+  },
+
+  {
+    src: "./gall8.JPG",
+  },
+
+  {
+    src: "./gall11.JPG",
+  },
+
+  {
+    src: "./10.JPG",
   },
 ];
 

@@ -1,4 +1,12 @@
-import { Box, Button, Flex, Grid, Heading, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Grid,
+  Heading,
+  Image,
+  Text,
+} from "@chakra-ui/react";
 import Head from "next/head";
 import Card from "../components/Card";
 import SectionTitle from "../components/SectionTitle";
@@ -6,6 +14,7 @@ import WrapperContainer from "../components/WrapperContainer";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
+import NextLink from "next/link";
 import {
   FaBed,
   FaBook,
@@ -19,51 +28,89 @@ import NoticeCard from "../components/NoticeCard";
 export default function Home() {
   return (
     <>
-      <Carousel autoPlay={true} infiniteLoop={true} showThumbs={false}>
-        <Box>
-          <img src="./sing.jpg"></img>
-          <p className="legend">Legend 1</p>
-        </Box>
+      <Box>
+        <Carousel autoPlay={true} infiniteLoop={true} showThumbs={false}>
+          <Flex maxHeight={"lg"}>
+            <Image src="/a.JPG" alt="School" objectFit={"cover"}></Image>
+            <div className="legend test">
+              <h1>Admission Open for 2021-2022</h1>
+            </div>
+          </Flex>
 
-        <Box>
-          <img src="/sing.jpg"></img>
-          <p className="legend">Legend 1</p>
-        </Box>
+          <Flex maxHeight={"lg"}>
+            <Image src="/b.JPG" alt="School" objectFit={"cover"}></Image>
+            <div className="legend test">
+              <h1>Admission Open for 2021-2022</h1>
+            </div>
+          </Flex>
 
-        <Box>
-          <img src="/sing.jpg"></img>
-          <p className="legend">Legend 1</p>
-        </Box>
-      </Carousel>
+          <Flex maxHeight={"lg"}>
+            <Image src="/c.JPG" alt="School" objectFit={"cover"}></Image>
+            <div className="legend test">
+              <h1>Admission Open for 2021-2022</h1>
+            </div>
+          </Flex>
+
+          <Flex maxHeight={"lg"}>
+            <Image src="/d.JPG" alt="School" objectFit={"cover"}></Image>
+            <div className="legend test">
+              <h1>Admission Open for 2021-2022</h1>
+            </div>
+          </Flex>
+        </Carousel>
+      </Box>
       <WrapperContainer>
         {/* Carosoul */}
 
         <SectionTitle title={"Message from the principal"} />
         {/* message from the principal block */}
-        <Flex flexDirection={{ base: "column", md: "row" }}>
-          {/* message */}
-          <Text
-            fontSize={"xs"}
-            textColor={"gray.500"}
-            mt={{ base: "5", md: "0" }}
+        <Flex flexDirection={{ base: "column", md: "row" }} gap={"10"}>
+          <Box
+            maxW={{ base: "full", md: "xs" }}
+            maxH={{ base: "sm", md: "xs" }}
+            borderTopLeftRadius="3xl"
+            borderBottomRightRadius={"3xl"}
+            overflow={"hidden"}
+            mt={"15"}
+            shadow={"xl"}
           >
-            lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          </Text>
-
-          {/* princiapl name and degination container */}
-
-          <Box mt={"5"} mb={"5"}>
-            {/* principal name */}
-            <Heading fontSize={"lg"} textColor={"brand.secondary"}>
-              Rama Pokhrel
-            </Heading>
-            {/* degignation */}
-            <Text fontSize={"xs"} textColor={"gray.600"}>
-              Principal,Genius English Medium School
-            </Text>
+            <Image src="mam2.jpeg" objectFit={"cover"} />
           </Box>
+          {/* message */}
+          <Flex flexDirection={"column"}>
+            <Text
+              fontSize={"xs"}
+              textColor={"gray.500"}
+              mt="15"
+              maxW={"container.xl"}
+            >
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            </Text>
+
+            {/* princiapl name and degination container */}
+
+            <Box mt={"5"} mb={"5"}>
+              {/* principal name */}
+              <Heading fontSize={"lg"} textColor={"brand.secondary"}>
+                Rama Pokhrel
+              </Heading>
+              {/* degignation */}
+              <Text fontSize={"xs"} textColor={"gray.600"}>
+                Principal,Genius English Medium School
+              </Text>
+            </Box>
+          </Flex>
         </Flex>
         {/* 
           why us section goes here 
@@ -73,10 +120,10 @@ export default function Home() {
       Card container,there will be the services provided by the school
        */}
         <Grid
-          templateRows="repeat(1, 1fr)"
-          templateColumns="repeat(1, 1fr)"
+          templateColumns={{ base: "repeat(1,1fr)", md: "repeat(3,1fr)" }}
           gap={4}
           mb={"5"}
+          mt={"10"}
         >
           {/* transport */}
           <Card
@@ -122,8 +169,7 @@ export default function Home() {
         {/* Notice and events */}
         <SectionTitle title={"Notice and Events"} />
         <Grid
-          templateRows="repeat(1, 1fr)"
-          templateColumns="repeat(1, 1fr)"
+          templateColumns={{ base: "repeat(1,1fr)", md: "repeat(3,1fr)" }}
           gap={4}
         >
           <NoticeCard
@@ -155,9 +201,16 @@ export default function Home() {
           />
         </Grid>
         {/* more notices */}
-        <Button mt={"5"} fontWeight={"bold"} color={"brand.secondary"} mb={"5"}>
-          More Notices
-        </Button>
+        <NextLink href="/notices">
+          <Button
+            mt={"5"}
+            fontWeight={"bold"}
+            color={"brand.secondary"}
+            mb={"5"}
+          >
+            More Notices
+          </Button>
+        </NextLink>
       </WrapperContainer>
     </>
   );

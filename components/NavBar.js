@@ -1,27 +1,24 @@
 import {
-  Button,
+  Box,
   Drawer,
   DrawerBody,
-  DrawerCloseButton,
   DrawerContent,
-  DrawerFooter,
-  DrawerHeader,
   DrawerOverlay,
   Flex,
   IconButton,
-  Input,
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import { FaBars } from "react-icons/fa";
 import React from "react";
 import NavLink from "./NavLink";
+import WrapperContainer from "./WrapperContainer";
 
 function NavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   return (
-    <>
+    <WrapperContainer>
       <Flex
         alignItems={"center"}
         justifyContent={"space-between"}
@@ -33,7 +30,19 @@ function NavBar() {
           onClick={onOpen}
           icon={<FaBars />}
           bg={"white"}
+          display={{ base: "block", md: "none" }}
         />
+
+        {/* nav links for md screens */}
+        <Box display={{ base: "none", md: "block" }}>
+          <Flex gap={"5"}>
+            <NavLink navHref={"/"} navLink={"Home"} />
+            <NavLink navHref={"/about"} navLink={"About"} />
+            <NavLink navHref={"/notices"} navLink={"Notices"} />
+            <NavLink navHref={"/gallery"} navLink={"Gallery"} />
+            <NavLink navHref={"/contact"} navLink={"Contact"} />
+          </Flex>
+        </Box>
       </Flex>
 
       <Drawer
@@ -53,7 +62,7 @@ function NavBar() {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
-    </>
+    </WrapperContainer>
   );
 }
 

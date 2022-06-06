@@ -4,8 +4,8 @@ import {
   Flex,
   Grid,
   Heading,
-  Image,
   Text,
+  Image,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import Card from "../components/Card";
@@ -31,28 +31,28 @@ export default function Home() {
       <Box>
         <Carousel autoPlay={true} infiniteLoop={true} showThumbs={false}>
           <Flex maxHeight={"lg"}>
-            <Image src="/a.JPG" alt="School" objectFit={"cover"}></Image>
+            <Image src="/1.jpeg" alt="School" objectFit={"cover"}></Image>
             <div className="legend test">
               <h1>Admission Open for 2021-2022</h1>
             </div>
           </Flex>
 
           <Flex maxHeight={"lg"}>
-            <Image src="/b.JPG" alt="School" objectFit={"cover"}></Image>
+            <Image src="/2.jpeg" alt="School" objectFit={"cover"}></Image>
             <div className="legend test">
               <h1>Admission Open for 2021-2022</h1>
             </div>
           </Flex>
 
           <Flex maxHeight={"lg"}>
-            <Image src="/c.JPG" alt="School" objectFit={"cover"}></Image>
+            <Image src="/3.jpeg" alt="School" objectFit={"cover"}></Image>
             <div className="legend test">
               <h1>Admission Open for 2021-2022</h1>
             </div>
           </Flex>
 
           <Flex maxHeight={"lg"}>
-            <Image src="/d.JPG" alt="School" objectFit={"cover"}></Image>
+            <Image src="/4.jpeg" alt="School" objectFit={"cover"}></Image>
             <div className="legend test">
               <h1>Admission Open for 2021-2022</h1>
             </div>

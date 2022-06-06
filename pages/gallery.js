@@ -71,6 +71,7 @@ function Gallery() {
                 alt={image}
                 layout={"responsive"}
                 objectFit={"cover"}
+                quality={70}
               ></Image>
             </Box>
             <Modal isOpen={isOpen} onClose={onClose}>
@@ -83,6 +84,7 @@ function Gallery() {
                     objectFit={"contain"}
                     src={imageSrc}
                     alt={imageSrc}
+                    quality={70}
                   ></Image>
                 </ModalContent>
               </ModalOverlay>

@@ -37,6 +37,10 @@ function about() {
           content="https://geniusenglishmediumschool/history.jpeg"
         />
         <link rel="icon" href="/logo.jpeg" type="image/icon type" />
+        <meta
+          name="google-site-verification"
+          content="jEWPrYapPNLh6abfTTMmAL2O-omWypT2ZvfyXno15mM"
+        />
       </Head>
       <WrapperContainer>
         {/* about school */}

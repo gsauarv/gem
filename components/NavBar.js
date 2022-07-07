@@ -6,13 +6,16 @@ import {
   DrawerOverlay,
   Flex,
   IconButton,
+  Image,
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import { FaBars } from "react-icons/fa";
+import { AiOutlineMenu } from "react-icons/ai";
 import React from "react";
 import NavLink from "./NavLink";
 import WrapperContainer from "./WrapperContainer";
+import Link from "next/link";
 
 function NavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -24,14 +27,37 @@ function NavBar() {
         justifyContent={"space-between"}
         height={"14"}
       >
-        <Text>GEMS</Text>
-        <IconButton
+        <Link href={"/"}>
+          <Image
+            src="./logo.jpeg"
+            alt="Genius English Medium School "
+            maxW={"20"}
+            maxH={"14"}
+            overflow={"hidden"}
+            cursor={"pointer"}
+          />
+        </Link>
+        <Box
+          textAlign={"center"}
           ref={btnRef}
           onClick={onOpen}
-          icon={<FaBars />}
-          bg={"white"}
+          _hover={{ backgroundColor: "gray.200" }}
+          padding={"2"}
+          rounded={"3"}
+          cursor={"pointer"}
           display={{ base: "block", md: "none" }}
-        />
+        >
+          <AiOutlineMenu size={"18"} />
+          {/* <IconButton
+            ref={btnRef}
+            onClick={onOpen}
+            margin={"0"}
+            icon={<AiOutlineMenu size={"18"} />}
+            bg={"white"}
+            justifyItems={"center"}
+            display={{ base: "block", md: "none" }}
+          /> */}
+        </Box>
 
         {/* nav links for md screens */}
         <Box display={{ base: "none", md: "block" }}>

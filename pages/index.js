@@ -32,6 +32,38 @@ import NoticeCard from "../components/NoticeCard";
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>
+          Genius English Medium School | School that ensure better future.
+        </title>
+        <meta
+          name="description"
+          content="Genius English medium school was established in the year 2056 B.S.
+            at Sundarijal, Kathmandu with good computer lab Facility, ECA activities,
+            different kinds of competition every week, Sports Week and all other
+            facilities that a modern school need for the betterment of its
+            Students."
+          key="desc"
+        />
+        <meta
+          property="og:title"
+          content="Genius English Medium School | School that ensure better future."
+        />
+        <meta
+          property="og:description"
+          content="Genius English medium school was established in the year 2056 B.S.
+            at Sundarijal, Kathmandu with good computer lab Facility, ECA activities,
+            different kinds of competition every week, Sports Week and all other
+            facilities that a modern school need for the betterment of its
+            Students."
+        />
+        <meta
+          property="og:image"
+          content="https://geniusenglishmediumschool/history.jpeg"
+        />
+        <link rel="icon" href="/logo.jpeg" type="image/icon type" />
+      </Head>
+
       <Box>
         <Carousel autoPlay={true} infiniteLoop={true} showThumbs={false}>
           <Flex maxHeight={"lg"}>

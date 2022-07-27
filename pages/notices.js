@@ -82,5 +82,6 @@ export async function getStaticProps(context) {
     props: {
       notices: notices,
     },
+    revalidate: 10,
   };
 }

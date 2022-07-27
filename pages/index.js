@@ -28,8 +28,9 @@ import {
 } from "react-icons/fa";
 
 import NoticeCard from "../components/NoticeCard";
+import client from "../client";
 
-export default function Home() {
+export default function Home({ notices }) {
   return (
     <>
       <Head>
@@ -295,33 +296,13 @@ export default function Home() {
           templateColumns={{ base: "repeat(1,1fr)", md: "repeat(3,1fr)" }}
           gap={4}
         >
-          <NoticeCard
-            title={"Singing Competition"}
-            description={
-              "AAre you looking for quality education with modest investment "
-            }
-          />
-
-          <NoticeCard
-            title={"Dancing Competition"}
-            description={
-              "AAre you looking for quality education with modest investment "
-            }
-          />
-
-          <NoticeCard
-            title={"Singing Competition"}
-            description={
-              "AAre you looking for quality education with modest investment "
-            }
-          />
-
-          <NoticeCard
-            title={"Singing Competition"}
-            description={
-              "AAre you looking for quality education with modest investment "
-            }
-          />
+          {notices.map((notice) => (
+            <NoticeCard
+              title={notice.title}
+              key={notice.id}
+              description={notice.description}
+            />
+          ))}
         </Grid>
         {/* more notices */}
         <NextLink href="/notices">
@@ -337,4 +318,21 @@ export default function Home() {
       </WrapperContainer>
     </>
   );
+}
+
+export async function getStaticProps(context) {
+  const notices = await client.fetch(`*[_type == "notices"]
+{
+  title,
+  eventDate,
+  description,
+  "id": _id
+}[0..2]`);
+  console.log(notices);
+  return {
+    props: {
+      notices: notices,
+    },
+    revalidate : 10
+  };
 }

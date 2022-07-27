@@ -4,8 +4,8 @@ import React from "react";
 import NoticeCard from "../components/NoticeCard";
 import SectionTitle from "../components/SectionTitle";
 import WrapperContainer from "../components/WrapperContainer";
-
-function notices() {
+import client from "../client";
+function notices({ notices }) {
   return (
     <>
       <Head>
@@ -54,47 +54,13 @@ function notices() {
           mb={"5"}
           mt={"10"}
         >
-          <NoticeCard
-            description={
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of "
-            }
-            title={"Singing Competition"}
-          />
-
-          <NoticeCard
-            description={
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of "
-            }
-            title={"Singing Competition"}
-          />
-
-          <NoticeCard
-            description={
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of "
-            }
-            title={"Singing Competition"}
-          />
-
-          <NoticeCard
-            description={
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of "
-            }
-            title={"Singing Competition"}
-          />
-
-          <NoticeCard
-            description={
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of "
-            }
-            title={"Singing Competition"}
-          />
-
-          <NoticeCard
-            description={
-              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of "
-            }
-            title={"Singing Competition"}
-          />
+          {notices.map((notice) => (
+            <NoticeCard
+              title={notice.title}
+              description={notice.description}
+              key={notice.id}
+            />
+          ))}
         </Grid>
       </WrapperContainer>
     </>
@@ -102,3 +68,19 @@ function notices() {
 }
 
 export default notices;
+
+export async function getStaticProps(context) {
+  const notices = await client.fetch(`*[_type == "notices"]
+{
+  title,
+  eventDate,
+  description,
+  "id": _id
+}`);
+  console.log(notices);
+  return {
+    props: {
+      notices: notices,
+    },
+  };
+}

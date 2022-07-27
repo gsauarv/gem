@@ -12,39 +12,10 @@ import SectionTitle from "../components/SectionTitle";
 import WrapperContainer from "../components/WrapperContainer";
 import Image from "next/image";
 import Head from "next/head";
+import imageUrlBuilder from "@sanity/image-url";
+import client from "../client";
 
-const images = [
-  {
-    src: "/gall1.JPG",
-  },
-  {
-    src: "/gall2.JPG",
-  },
-  {
-    src: "/gall3.JPG",
-  },
-
-  {
-    src: "/gall4.JPG",
-  },
-  {
-    src: "/gall9.JPG",
-  },
-
-  {
-    src: "/gall8.JPG",
-  },
-
-  {
-    src: "/gall11.JPG",
-  },
-
-  {
-    src: "/10.JPG",
-  },
-];
-
-function Gallery() {
+function Gallery({ galleries }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [imageSrc, setImageSrc] = useState("");
   return (
@@ -94,18 +65,18 @@ function Gallery() {
           mb={"5"}
           mt={"5"}
         >
-          {images.map((image, index) => (
+          {galleries.map((image, index) => (
             <>
               <Box
                 onClick={() => {
-                  setImageSrc(image.src);
+                  setImageSrc(image.imageSrc);
                   onOpen();
                 }}
               >
                 <Image
                   width={"350px"}
                   height={"350px"}
-                  src={image.src}
+                  src={image.imageSrc}
                   alt={image}
                   layout={"responsive"}
                   objectFit={"cover"}
@@ -121,7 +92,7 @@ function Gallery() {
                       layout={"responsive"}
                       objectFit={"contain"}
                       src={imageSrc}
-                      alt={imageSrc}
+                      alt={image.name}
                       quality={70}
                     ></Image>
                   </ModalContent>
@@ -136,3 +107,18 @@ function Gallery() {
 }
 
 export default Gallery;
+
+export async function getStaticProps(context) {
+  const gallery = await client.fetch(`*[_type == "gallery"]
+{
+  "imageSrc" : image.asset -> url,
+  name
+}`);
+  console.log(gallery);
+  return {
+    props: {
+      galleries: gallery,
+    },
+    revalidate:10
+  };
+}

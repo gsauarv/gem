@@ -9,7 +9,7 @@ h1,h2,h3,h4{
 }
 
 .card{
-    background-image: linear-gradient(to right, #000 0%, rgba(0, 0, 0, 0.61) 50%),url("../public/event.jpeg");
+    background-image: linear-gradient(to right, #000 0%, rgba(0, 0, 0, 0.61) 50%),url("../public/bg.jpg");
     background-size: cover;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.438) 0px 0px 10px;

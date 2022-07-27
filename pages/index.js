@@ -135,34 +135,40 @@ export default function Home({ notices }) {
               change. There is no doubt that online classes can never be
               complete substitute to offline classes. Theirfore, we have already
               switched over to offline classes. We can always go back to online
-              classes as and when required.The pandemic has taught us a lesson.
-              We have learnt to use technology to achieve our educational goals.
-              I am sure we will continue to you technology in the future as
-              well. Genius is a smart school in which students and member of the
-              staff are encourage to work smart and sincere. It wants its
-              students to become efficient and effective members of the society.
-              The school provides an environment which is favourable for
-              students to study and the staff to work. Discipline is one of the
-              pillars of educational at genius. the school those not
-              discriminate between slow learners and fast learners. Slow
-              Learners are mentored by competent and dedicated teachers to
-              improve their performance. Tutorial classes are offered to
-              students as an when required. students are judge not only on the
-              basis of their performance in the test and examination but also on
-              their personalities, their values and your attitude towards life.
-              The genius administration has a single-point agenda. It tries its
-              level best to provide students with all the supports it can.
-              Despite financial constraints, it tries to give the students as
-              many facilities as possible. the school is like a garden in which
-              students are like plants. My role in the school is that of a
-              gardener. I lead a team of competent and dedicated people who are
-              prepared the ground on which our students, who are like plants,
-              can blossom into beautiful flowers. Genius is well-knit family.
-              students, teachers and members of the non-teaching staff are
-              integral parts of this family. The success or failure of genius is
-              share by all the members of this extended family. Genius extents
-              it&apos;s ARM to all students who wish to be part of the family.
-              You will know the difference only when you join us.
+              classes as and when required.
+              <br />
+              <br />
+              The pandemic has taught us a lesson. We have learnt to use
+              technology to achieve our educational goals. I am sure we will
+              continue to you technology in the future as well. Genius is a
+              smart school in which students and member of the staff are
+              encourage to work smart and sincere. It wants its students to
+              become efficient and effective members of the society. The school
+              provides an environment which is favourable for students to study
+              and the staff to work. Discipline is one of the pillars of
+              educational at genius. The school those not discriminate between
+              slow learners and fast learners. Slow Learners are mentored by
+              competent and dedicated teachers to improve their performance.
+              Tutorial classes are offered to students as an when required.
+              students are judge not only on the basis of their performance in
+              the test and examination but also on their personalities, their
+              values and your attitude towards life. The genius administration
+              has a single-point agenda.
+              <br />
+              <br />
+              It tries its level best to provide students with all the supports
+              it can. Despite financial constraints, it tries to give the
+              students as many facilities as possible. the school is like a
+              garden in which students are like plants. My role in the school is
+              that of a gardener. I lead a team of competent and dedicated
+              people who are prepared the ground on which our students, who are
+              like plants, can blossom into beautiful flowers. Genius is
+              well-knit family. students, teachers and members of the
+              non-teaching staff are integral parts of this family. The success
+              or failure of genius is share by all the members of this extended
+              family. Genius extents it&apos;s ARM to all students who wish to
+              be part of the family. You will know the difference only when you
+              join us.
             </Text>
 
             {/* princiapl name and degination container */}
@@ -209,9 +215,11 @@ export default function Home({ notices }) {
               information but about making it capable of preparing students for
               life.At genius we try to provide value-oriented learning
               opportunity that cultivate the mind enrich the lives of our
-              students and prepare them to meet the challenge of life .we go
-              beyond the curriculum to sow the speed of social commitment among
-              students. Students of today need innovative, vocational,
+              students and prepare them to meet the challenge of life.
+              <br />
+              <br />
+              we go beyond the curriculum to sow the speed of social commitment
+              among students. Students of today need innovative, vocational,
               agricultural, technical and social education to discover their
               true potential. Education is not filling the mind&apos;s of the
               student with the abundance of information. it is the manifestation
@@ -333,6 +341,6 @@ export async function getStaticProps(context) {
     props: {
       notices: notices,
     },
-    revalidate : 10
+    revalidate: 10,
   };
 }

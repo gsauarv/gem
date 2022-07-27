@@ -80,7 +80,7 @@ function Gallery({ galleries }) {
                   alt={image}
                   layout={"responsive"}
                   objectFit={"cover"}
-                  quality={70}
+                  quality={50}
                 ></Image>
               </Box>
               <Modal isOpen={isOpen} onClose={onClose}>
@@ -93,7 +93,7 @@ function Gallery({ galleries }) {
                       objectFit={"contain"}
                       src={imageSrc}
                       alt={image.name}
-                      quality={70}
+                      quality={50}
                     ></Image>
                   </ModalContent>
                 </ModalOverlay>
@@ -119,6 +119,6 @@ export async function getStaticProps(context) {
     props: {
       galleries: gallery,
     },
-    revalidate:10
+    revalidate: 10,
   };
 }
